@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+@theme {
+  /* Palette: warm charcoal, bone off-white, one ember accent. */
+  --color-ink-950: #0b0b0a;
+  --color-ink-900: #121211;
+  --color-ink-850: #161615;
+  --color-ink-800: #1b1b19;
+  --color-ink-700: #262624;
+  --color-ink-600: #3a3a37;
+  --color-ink-500: #5f5f5a;
+  --color-ink-400: #8d8d86;
+  --color-ink-300: #b3b3ac;
+  --color-ink-200: #d4d4ce;
+
+  --color-bone-50: #f7f5f0;
+  --color-bone-100: #efece5;
+  --color-bone-200: #e2ded5;
+  --color-bone-300: #cbc6ba;
+
+  --color-ember-300: #ffa385;
+  --color-ember-400: #ff7a52;
+  --color-ember-500: #f4552e;
+  --color-ember-600: #cf3f1b;
+  --color-ember-700: #a53314;
+
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --breakpoint-xs: 30rem;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-ticker: ticker 48s linear infinite;
+  --animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
+  --animate-dash: dash 3s linear infinite;
+  --animate-cursor: cursor 1s steps(2, start) infinite;
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 0.35; transform: scale(0.85); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+  @keyframes dash {
+    to { stroke-dashoffset: -24; }
+  }
+  @keyframes cursor {
+    50% { opacity: 0; }
+  }
+}
+
+:root {
+  color-scheme: dark;
+  --header-height: 4.25rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-ink-900);
+  color: var(--color-bone-50);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+::selection {
+  background-color: var(--color-ember-500);
+  color: var(--color-ink-950);
+}
+
+/* Focus: always visible, never only on :focus */
+:focus-visible {
+  outline: 2px solid var(--color-ember-400);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Display type with optical sizing and tight tracking */
+@utility font-display {
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 96, "wdth" 100;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility text-pretty {
+  text-wrap: pretty;
+}
+
+/* Section surfaces */
+@utility surface-light {
+  background-color: var(--color-bone-50);
+  color: var(--color-ink-900);
+  color-scheme: light;
+}
+
+/* A faint engineering grid used behind hero and feature areas */
+@utility bg-grid-faint {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+}
+
+@utility bg-grid-faint-light {
+  background-image:
+    linear-gradient(to right, rgb(18 18 17 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(18 18 17 / 0.06) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+}
+
+@utility bg-dots {
+  background-image: radial-gradient(rgb(255 255 255 / 0.12) 1px, transparent 1px);
+  background-size: 1.25rem 1.25rem;
+}
+
+/* Fade mask for tickers */
+@utility mask-fade-x {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Prose for long-form pages (insights, legal) */
+.prose-studio {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: var(--color-ink-200);
+}
+.prose-studio > * + * { margin-top: 1.25em; }
+.prose-studio h2 {
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 48;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  color: var(--color-bone-50);
+  margin-top: 2.5em;
+}
+.prose-studio h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  color: var(--color-bone-50);
+  margin-top: 2em;
+}
+.prose-studio p strong { color: var(--color-bone-50); font-weight: 600; }
+.prose-studio ul, .prose-studio ol { padding-left: 1.25rem; }
+.prose-studio ul { list-style: disc; }
+.prose-studio ol { list-style: decimal; }
+.prose-studio li + li { margin-top: 0.5em; }
+.prose-studio li::marker { color: var(--color-ember-400); }
+.prose-studio a {
+  color: var(--color-bone-50);
+  text-decoration: underline;
+  text-decoration-color: var(--color-ember-500);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1.5px;
+}
+.prose-studio a:hover { color: var(--color-ember-300); }
+.prose-studio blockquote {
+  border-left: 2px solid var(--color-ember-500);
+  padding-left: 1.25rem;
+  color: var(--color-bone-50);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.45;
+}
+.prose-studio code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--color-ink-800);
+  border: 1px solid var(--color-ink-700);
+  padding: 0.1em 0.4em;
+  border-radius: 0.25rem;
+}
+.prose-studio table { width: 100%; border-collapse: collapse; font-size: 0.9375rem; }
+.prose-studio th, .prose-studio td { border-bottom: 1px solid var(--color-ink-700); padding: 0.75rem 0.5rem; text-align: left; vertical-align: top; }
+.prose-studio th { color: var(--color-bone-50); font-weight: 600; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -17,7 +17,7 @@ const variants: Record<Variant, string> = {
   ghost:
     "text-bone-50 hover:text-ember-300 [.surface-light_&]:text-ink-900 [.surface-light_&]:hover:text-ember-600",
   inverse:
-    "bg-bone-50 text-ink-950 hover:bg-white",
+    "bg-bone-50 text-ink-950 hover:bg-paper",
 };
 
 const sizes: Record<Size, string> = {

@@ -7,6 +7,7 @@ import { ArrowRight, ChevronDown, Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { primaryNav } from "@/data/navigation";
 import { services } from "@/data/services";
 import { cn } from "@/lib/utils";
@@ -136,7 +137,7 @@ export function Header() {
                     transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
                     className="absolute left-0 top-full pt-3"
                   >
-                    <div className="w-[34rem] overflow-hidden rounded-2xl border border-ink-700 bg-ink-850 p-2 shadow-2xl shadow-black/50">
+                    <div className="w-[34rem] overflow-hidden rounded-2xl border border-ink-700 bg-ink-850 p-2 shadow-panel">
                       <ul className="grid grid-cols-2 gap-1">
                         {services.map((s) => {
                           const Icon = s.icon;
@@ -199,6 +200,7 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
+            <ThemeToggle />
             <div className="hidden sm:block">
               <Button href="/start-project" size="sm">
                 Start a project

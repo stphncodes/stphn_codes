@@ -77,6 +77,15 @@ src/
 - **Contact details and social links**: `src/lib/site.ts`. The social URLs there are placeholders based on the studio handle and should be verified before launch.
 - **Design tokens**: colours, fonts, easing and keyframes live in `src/app/globals.css` under `@theme`.
 
+## Light and dark themes
+
+The site is dark by default with a light theme behind the sun/moon toggle in the header.
+
+- The theme is an attribute on `<html>` (`data-theme="dark" | "light"`). `src/lib/theme.ts` holds the storage key, the default and the inline script that applies the saved choice before first paint, so there is no flash on reload.
+- `src/components/ui/ThemeToggle.tsx` reads that attribute, flips it and saves the choice to `localStorage`.
+- The light palette is defined in `src/app/globals.css` under `:root[data-theme="light"]`. It remaps the same `--color-ink-*`, `--color-bone-*` and `--color-ember-*` variables, so every existing utility class flips consistently and sections that are light-on-dark become dark-on-light. Add new colours there in both blocks.
+- To follow the operating system preference instead of defaulting to dark, change `DEFAULT_THEME` logic in `src/lib/theme.ts` to read `matchMedia("(prefers-color-scheme: light)")`.
+
 ## Deploying
 
 The site is a standard Next.js app and deploys to Vercel without configuration:

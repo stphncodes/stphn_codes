@@ -10,7 +10,7 @@ export function ServiceCard({ service, className, featured }: { service: Service
       href={`/services/${service.slug}`}
       className={cn(
         "group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-ink-700 bg-ink-850 p-6 transition-[border-color,transform,background-color] duration-500 ease-out-expo hover:-translate-y-1 hover:border-ink-500 hover:bg-ink-800 sm:p-7",
-        "[.surface-light_&]:border-bone-200 [.surface-light_&]:bg-white [.surface-light_&]:hover:border-ink-300",
+        "[.surface-light_&]:border-bone-200 [.surface-light_&]:bg-paper [.surface-light_&]:hover:border-ink-300",
         className,
       )}
     >

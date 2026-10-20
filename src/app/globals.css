@@ -18,6 +18,9 @@
   --color-bone-200: #e2ded5;
   --color-bone-300: #cbc6ba;
 
+  /* Card surface inside inverted (surface-light) sections. */
+  --color-paper: #ffffff;
+
   --color-ember-300: #ffa385;
   --color-ember-400: #ff7a52;
   --color-ember-500: #f4552e;
@@ -56,6 +59,43 @@
 :root {
   color-scheme: dark;
   --header-height: 4.25rem;
+  --grid-line: rgb(255 255 255 / 0.045);
+  --grid-line-inverse: rgb(18 18 17 / 0.06);
+  --dot-color: rgb(255 255 255 / 0.12);
+  --shadow-color: rgb(0 0 0 / 0.5);
+}
+
+/*
+ * Light theme. The palette scale is inverted so every existing utility flips
+ * consistently: page and surfaces become off-white, text becomes charcoal, and
+ * the sections that were light on dark become dark on light. Ember is darkened
+ * so accent text keeps enough contrast on pale backgrounds.
+ */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-ink-950: #efece5;
+  --color-ink-900: #f7f5f0;
+  --color-ink-850: #fcfbf9;
+  --color-ink-800: #f1eee7;
+  --color-ink-700: #e2ded5;
+  --color-ink-600: #cbc6ba;
+  --color-ink-500: #7a7a74;
+  --color-ink-400: #66665f;
+  --color-ink-300: #4a4a45;
+  --color-ink-200: #2e2e2a;
+  --color-bone-50: #121211;
+  --color-bone-100: #1b1b19;
+  --color-bone-200: #262624;
+  --color-bone-300: #3a3a37;
+  --color-paper: #1b1b19;
+  --color-ember-300: #a53314;
+  --color-ember-400: #c93d1a;
+  --color-ember-500: #d9431f;
+  --color-ember-600: #ff7a52;
+  --grid-line: rgb(18 18 17 / 0.07);
+  --grid-line-inverse: rgb(255 255 255 / 0.05);
+  --dot-color: rgb(18 18 17 / 0.16);
+  --shadow-color: rgb(18 18 17 / 0.16);
 }
 
 html {
@@ -66,6 +106,7 @@ html {
 body {
   background-color: var(--color-ink-900);
   color: var(--color-bone-50);
+  transition: background-color 0.25s ease, color 0.25s ease;
   font-family: var(--font-sans);
   font-feature-settings: "ss01", "cv11";
   text-rendering: optimizeLegibility;
@@ -107,23 +148,32 @@ body {
   color-scheme: light;
 }
 
+:root[data-theme="light"] .surface-light {
+  color-scheme: dark;
+}
+
+/* Elevated panels: shadow strength follows the theme */
+@utility shadow-panel {
+  box-shadow: 0 25px 50px -12px var(--shadow-color);
+}
+
 /* A faint engineering grid used behind hero and feature areas */
 @utility bg-grid-faint {
   background-image:
-    linear-gradient(to right, rgb(255 255 255 / 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
   background-size: 4rem 4rem;
 }
 
 @utility bg-grid-faint-light {
   background-image:
-    linear-gradient(to right, rgb(18 18 17 / 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(18 18 17 / 0.06) 1px, transparent 1px);
+    linear-gradient(to right, var(--grid-line-inverse) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-inverse) 1px, transparent 1px);
   background-size: 4rem 4rem;
 }
 
 @utility bg-dots {
-  background-image: radial-gradient(rgb(255 255 255 / 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
   background-size: 1.25rem 1.25rem;
 }
 

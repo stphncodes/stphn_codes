@@ -142,7 +142,7 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
               </Reveal>
               <ol className="mt-8 space-y-px overflow-hidden rounded-2xl border border-bone-200 bg-bone-200">
                 {service.process.map((step, i) => (
-                  <Reveal key={step.title} as="li" delay={i * 0.05} className="grid gap-3 bg-white p-6 sm:grid-cols-12 sm:gap-6">
+                  <Reveal key={step.title} as="li" delay={i * 0.05} className="grid gap-3 bg-paper p-6 sm:grid-cols-12 sm:gap-6">
                     <span className="font-display text-2xl text-ember-600 sm:col-span-2">0{i + 1}</span>
                     <div className="sm:col-span-10">
                       <h4 className="font-display text-lg text-ink-900">{step.title}</h4>

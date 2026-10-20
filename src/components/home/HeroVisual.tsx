@@ -60,7 +60,7 @@ export function HeroVisual({ className }: { className?: string }) {
       </svg>
 
       {/* Panel 1: code */}
-      <figure className="absolute left-[2%] top-[6%] w-[52%] rounded-xl border border-ink-700 bg-ink-850 shadow-2xl shadow-black/40">
+      <figure className="absolute left-[2%] top-[6%] w-[52%] rounded-xl border border-ink-700 bg-ink-850 shadow-panel">
         <div className="flex items-center gap-2 border-b border-ink-700 px-3 py-2">
           <span className="size-2 rounded-full bg-ink-600" />
           <span className="size-2 rounded-full bg-ink-600" />
@@ -85,7 +85,7 @@ export function HeroVisual({ className }: { className?: string }) {
       </figure>
 
       {/* Panel 2: shipped interface */}
-      <figure className="absolute left-[30%] top-[34%] w-[56%] rounded-xl border border-ink-600 bg-bone-50 text-ink-900 shadow-2xl shadow-black/50">
+      <figure className="absolute left-[30%] top-[34%] w-[56%] rounded-xl border border-ink-600 bg-bone-50 text-ink-900 shadow-panel">
         <div className="flex items-center justify-between border-b border-bone-200 px-3 py-2">
           <div className="flex items-center gap-1.5">
             <span className="size-3 bg-ink-900" />
@@ -118,7 +118,7 @@ export function HeroVisual({ className }: { className?: string }) {
       </figure>
 
       {/* Panel 3: agent run */}
-      <figure className="absolute right-[0%] top-[66%] w-[46%] rounded-xl border border-ink-700 bg-ink-950 shadow-2xl shadow-black/60">
+      <figure className="absolute right-[0%] top-[66%] w-[46%] rounded-xl border border-ink-700 bg-ink-950 shadow-panel">
         <div className="flex items-center justify-between border-b border-ink-700 px-3 py-2">
           <span className="font-mono text-[0.5625rem] uppercase tracking-[0.18em] text-ink-400">agent · run 0412</span>
           <span className="flex items-center gap-1 font-mono text-[0.5625rem] uppercase tracking-[0.14em] text-ember-400">

@@ -54,7 +54,7 @@ function PlatformLayout({ heading, sub }: { heading: string; sub: string }) {
   const rows = ["Work placement · 6 weeks", "Volunteering · Community", "Team project · Lead", "Mentoring · Peer support"];
   return (
     <div className="grid h-[calc(100%-2rem)] grid-cols-[28%_1fr]">
-      <aside className="border-r border-bone-200 bg-white p-3">
+      <aside className="border-r border-bone-200 bg-paper p-3">
         <div className="mb-4 flex items-center gap-1.5">
           <span className="size-3 rounded-sm bg-[var(--accent)]" />
           <span className="h-1.5 w-12 rounded-full bg-ink-900/80" />
@@ -78,7 +78,7 @@ function PlatformLayout({ heading, sub }: { heading: string; sub: string }) {
         </div>
         <div className="mt-3 grid grid-cols-3 gap-2">
           {["Skills", "Experiences", "Verified"].map((label, i) => (
-            <div key={label} className="rounded-md border border-bone-200 bg-white p-2">
+            <div key={label} className="rounded-md border border-bone-200 bg-paper p-2">
               <p className="text-[0.5rem] uppercase tracking-wider text-ink-500">{label}</p>
               <div className="mt-1.5 h-1 w-full rounded-full bg-bone-200">
                 <div className="h-1 rounded-full bg-[var(--accent)]" style={{ width: `${[72, 55, 88][i]}%` }} />
@@ -88,7 +88,7 @@ function PlatformLayout({ heading, sub }: { heading: string; sub: string }) {
         </div>
         <ul className="mt-3 space-y-1.5">
           {rows.map((r, i) => (
-            <li key={r} className="flex items-center justify-between rounded-md border border-bone-200 bg-white px-2 py-1.5 text-[0.5625rem] sm:text-[0.625rem]">
+            <li key={r} className="flex items-center justify-between rounded-md border border-bone-200 bg-paper px-2 py-1.5 text-[0.5625rem] sm:text-[0.625rem]">
               <span className="truncate text-ink-900">{r}</span>
               {i < 3 ? (
                 <span className="flex size-3.5 items-center justify-center rounded-full bg-[var(--accent)] text-white">
@@ -101,7 +101,7 @@ function PlatformLayout({ heading, sub }: { heading: string; sub: string }) {
           ))}
         </ul>
         <div className="mt-3 grid grid-cols-2 gap-2">
-          <div className="rounded-md border border-bone-200 bg-white p-2">
+          <div className="rounded-md border border-bone-200 bg-paper p-2">
             <p className="text-[0.5rem] uppercase tracking-wider text-ink-500">Activity</p>
             <div className="mt-2 flex h-8 items-end gap-1">
               {[40, 65, 30, 80, 55, 90, 70].map((h, i) => (
@@ -109,7 +109,7 @@ function PlatformLayout({ heading, sub }: { heading: string; sub: string }) {
               ))}
             </div>
           </div>
-          <div className="rounded-md border border-bone-200 bg-white p-2">
+          <div className="rounded-md border border-bone-200 bg-paper p-2">
             <p className="text-[0.5rem] uppercase tracking-wider text-ink-500">Next step</p>
             <div className="mt-2 h-1.5 w-[85%] rounded-full bg-ink-900/80" />
             <div className="mt-1 h-1.5 w-[60%] rounded-full bg-ink-300" />
@@ -195,7 +195,7 @@ function EditorialLayout({ heading, sub }: { heading: string; sub: string }) {
         </div>
         <div className="grid grid-cols-3 gap-1.5">
           {["Sun 10:30", "Wed 19:00", "Fri 18:30"].map((t) => (
-            <div key={t} className="rounded-sm border border-bone-200 bg-white p-1.5">
+            <div key={t} className="rounded-sm border border-bone-200 bg-paper p-1.5">
               <p className="text-[0.5rem] font-semibold text-ink-900">{t}</p>
               <div className="mt-1 h-1 w-[70%] rounded-full bg-ink-200" />
             </div>

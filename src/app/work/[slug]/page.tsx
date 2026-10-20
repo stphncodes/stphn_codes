@@ -94,7 +94,7 @@ export default async function ProjectPage(props: PageProps<"/work/[slug]">) {
         <Container>
           <Reveal>
             <div className="rounded-3xl border border-ink-700 bg-ink-850 p-4 sm:p-8 lg:p-12">
-              <ProjectMockup project={project} priority wide className="mx-auto max-w-4xl shadow-2xl shadow-black/40" />
+              <ProjectMockup project={project} priority wide className="mx-auto max-w-4xl shadow-panel" />
             </div>
             <p className="mt-4 text-center font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-ink-500">
               Original interface composition. See the live site for actual screens.

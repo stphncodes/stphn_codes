@@ -61,7 +61,7 @@ export function WhyUs() {
               const Icon = r.icon;
               return (
                 <Reveal key={r.title} as="li" delay={i * 0.05} className={i === reasons.length - 1 ? "sm:col-span-2" : ""}>
-                  <div className="flex h-full gap-4 rounded-2xl border border-bone-200 bg-white p-6">
+                  <div className="flex h-full gap-4 rounded-2xl border border-bone-200 bg-paper p-6">
                     <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-ink-900 text-bone-50">
                       <Icon aria-hidden="true" className="size-4.5" />
                     </span>

@@ -16,7 +16,7 @@ interface ProjectCardProps {
 export function ProjectCard({ project, className, index, featured }: ProjectCardProps) {
   return (
     <article className={cn("group relative flex flex-col", featured && "lg:grid lg:grid-cols-12 lg:items-center lg:gap-10", className)}>
-      <Link href={`/work/${project.slug}`} className={cn("block overflow-hidden rounded-2xl border border-ink-700 bg-ink-850 p-3 transition-[border-color,transform] duration-500 ease-out-expo hover:-translate-y-1 hover:border-ink-500 [.surface-light_&]:border-bone-200 [.surface-light_&]:bg-white sm:p-4", featured && "lg:col-span-8")}>
+      <Link href={`/work/${project.slug}`} className={cn("block overflow-hidden rounded-2xl border border-ink-700 bg-ink-850 p-3 transition-[border-color,transform] duration-500 ease-out-expo hover:-translate-y-1 hover:border-ink-500 [.surface-light_&]:border-bone-200 [.surface-light_&]:bg-paper sm:p-4", featured && "lg:col-span-8")}>
         <ProjectMockup project={project} wide={featured} className="transition-transform duration-700 ease-out-expo group-hover:scale-[1.015]" />
       </Link>
       <div className={cn(featured && "lg:col-span-4")}>

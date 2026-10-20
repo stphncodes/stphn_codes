@@ -27,8 +27,8 @@ export function FounderPortrait({ className, priority }: { className?: string; p
         </div>
         <figcaption className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 sm:p-6">
           <div>
-            <p className="font-display text-xl text-bone-50 sm:text-2xl">{siteConfig.founder.name}</p>
-            <p className="mt-1 font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-ink-300">{siteConfig.founder.role}</p>
+            <p className="font-display text-xl text-white sm:text-2xl">{siteConfig.founder.name}</p>
+            <p className="mt-1 font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-white/70">{siteConfig.founder.role}</p>
           </div>
           <span aria-hidden="true" className="mb-1.5 size-2.5 shrink-0 bg-ember-500" />
         </figcaption>

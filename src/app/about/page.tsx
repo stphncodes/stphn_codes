@@ -10,6 +10,7 @@ import { Button, ArrowLink } from "@/components/ui/Button";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { FinalCta } from "@/components/home/FinalCta";
 import { LogoMark } from "@/components/ui/Logo";
+import { FounderPortrait } from "@/components/ui/FounderPortrait";
 import { services } from "@/data/services";
 import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -67,19 +68,22 @@ export default function AboutPage() {
         }
       />
 
-      {/* Studio introduction */}
+      {/* Studio introduction with founder portrait */}
       <Section labelledBy="intro-heading">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
+              <Reveal y={28}>
+                <FounderPortrait className="mx-auto max-w-md lg:max-w-none" priority />
+              </Reveal>
+            </div>
+            <div className="space-y-6 text-pretty text-lg leading-relaxed text-ink-300 lg:col-span-7 lg:pt-4">
               <Reveal>
                 <Eyebrow>The studio</Eyebrow>
                 <Heading id="intro-heading" className="mt-5">
                   Founded by an engineer who still writes the code.
                 </Heading>
               </Reveal>
-            </div>
-            <div className="space-y-6 text-pretty text-lg leading-relaxed text-ink-300 lg:col-span-7">
               <Reveal>
                 <p>
                   StphnCodes Studio was started by {siteConfig.founder.name}, a software engineer and full-stack web

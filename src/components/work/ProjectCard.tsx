@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/data/projects";
-import { ProjectMockup } from "@/components/work/ProjectMockup";
+import { ProjectScreenshot } from "@/components/work/ProjectScreenshot";
 import { Tag } from "@/components/ui/Tag";
 import { cn } from "@/lib/utils";
 
@@ -9,7 +9,7 @@ interface ProjectCardProps {
   project: Project;
   className?: string;
   index?: string;
-  /** Wide layout: mockup beside the text on large screens. */
+  /** Wide layout: screenshot beside the text on large screens. */
   featured?: boolean;
 }
 
@@ -17,7 +17,7 @@ export function ProjectCard({ project, className, index, featured }: ProjectCard
   return (
     <article className={cn("group relative flex flex-col", featured && "lg:grid lg:grid-cols-12 lg:items-center lg:gap-10", className)}>
       <Link href={`/work/${project.slug}`} className={cn("block overflow-hidden rounded-2xl border border-ink-700 bg-ink-850 p-3 transition-[border-color,transform] duration-500 ease-out-expo hover:-translate-y-1 hover:border-ink-500 [.surface-light_&]:border-bone-200 [.surface-light_&]:bg-paper sm:p-4", featured && "lg:col-span-8")}>
-        <ProjectMockup project={project} wide={featured} className="transition-transform duration-700 ease-out-expo group-hover:scale-[1.015]" />
+        <ProjectScreenshot project={project} wide={featured} sizes={featured ? "(min-width: 1024px) 60vw, 100vw" : undefined} className="transition-transform duration-700 ease-out-expo group-hover:scale-[1.015]" />
       </Link>
       <div className={cn(featured && "lg:col-span-4")}>
       <div className={cn("mt-5 flex items-start justify-between gap-4", featured && "lg:mt-0")}>

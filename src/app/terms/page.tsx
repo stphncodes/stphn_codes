@@ -34,7 +34,7 @@ export default function TermsPage() {
           title: "Intellectual property",
           paragraphs: [
             "The content, design and code of this website belong to us unless otherwise stated. You may view and share links to it freely. You may not copy substantial parts of it for commercial use without permission.",
-            "Portfolio work shown on this site belongs to the respective clients. Project names and links are provided for reference; the compositions shown are our own illustrative representations, not official client screenshots.",
+            "Portfolio work shown on this site belongs to the respective clients. Screenshots of their live sites are included for reference only and remain the property of those clients; project names and links are provided so you can visit the sites directly.",
           ],
         },
         {

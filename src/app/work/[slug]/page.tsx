@@ -11,7 +11,7 @@ import { Tag } from "@/components/ui/Tag";
 import { Button, ArrowLink } from "@/components/ui/Button";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { Reveal } from "@/components/motion/Reveal";
-import { ProjectMockup } from "@/components/work/ProjectMockup";
+import { ProjectScreenshot } from "@/components/work/ProjectScreenshot";
 import { FinalCta } from "@/components/home/FinalCta";
 import { projects, getProject } from "@/data/projects";
 import { getService } from "@/data/services";
@@ -101,10 +101,10 @@ export default async function ProjectPage(props: PageProps<"/work/[slug]">) {
         <Container>
           <Reveal>
             <div className="rounded-3xl border border-ink-700 bg-ink-850 p-4 sm:p-8 lg:p-12">
-              <ProjectMockup project={project} priority wide className="mx-auto max-w-4xl shadow-panel" />
+              <ProjectScreenshot project={project} priority wide className="mx-auto max-w-4xl shadow-panel" />
             </div>
             <p className="mt-4 text-center font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-ink-500">
-              Original interface composition. See the live site for actual screens.
+              Homepage of the live site, captured October 2026.
             </p>
           </Reveal>
 

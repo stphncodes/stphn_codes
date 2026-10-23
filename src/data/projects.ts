@@ -1,8 +1,5 @@
 export type ProjectSlug = "future-inspired" | "toyota-preowned-vehicles" | "bible-living-manchester";
 
-/** Controls which CSS interface composition is rendered for the project. */
-export type MockupVariant = "platform" | "marketplace" | "editorial";
-
 export interface Project {
   slug: ProjectSlug;
   name: string;
@@ -15,16 +12,6 @@ export interface Project {
   technologies: string[];
   /** Service slugs this project demonstrates. */
   services: string[];
-  mockup: {
-    variant: MockupVariant;
-    /** Accent used in the composed visual. */
-    accent: string;
-    /** Surface tone for the composed visual. */
-    tone: "light" | "dark";
-    /** Short text rendered inside the mock browser for context. */
-    heading: string;
-    sub: string;
-  };
   overview: string[];
   need: string[];
   solution: string[];
@@ -48,13 +35,6 @@ export const projects: Project[] = [
     liveUrl: "https://www.futureinspired.org/",
     technologies: ["Next.js", "Tailwind CSS", "Supabase"],
     services: ["web-applications", "web-development"],
-    mockup: {
-      variant: "platform",
-      accent: "#2f8f6f",
-      tone: "light",
-      heading: "Skills Passport",
-      sub: "Verified experience, one profile",
-    },
     overview: [
       "Future Inspired helps young people gain real-world experience and record it in a verified Skills Passport: a profile of skills and experiences that can be shown to employers, educators and programmes.",
       "The platform needed to serve more than one kind of user. Young people manage their own passport, while the organisation needs to review, verify and administer what is recorded. That meant authentication, role-aware dashboards and a data model that could grow.",
@@ -94,13 +74,6 @@ export const projects: Project[] = [
     liveUrl: "https://www.toyotapreownedvehicles.com/",
     technologies: ["React", "TanStack", "Tailwind CSS", "Supabase"],
     services: ["web-applications", "web-development"],
-    mockup: {
-      variant: "marketplace",
-      accent: "#d8341f",
-      tone: "dark",
-      heading: "Certified pre-owned",
-      sub: "Vehicles and genuine parts",
-    },
     overview: [
       "A marketplace for pre-owned Toyota vehicles and spare parts in Nigeria. Buyers browse and filter listings; the business manages inventory, enquiries and content through an admin panel.",
       "The project was delivered in collaboration with another developer. Stephen's work centred on the frontend interfaces, the admin panel, the landing page and the functionality connected to the database.",
@@ -141,13 +114,6 @@ export const projects: Project[] = [
     liveUrl: "https://www.biblelivingmanchester.org/",
     technologies: ["Vite.js", "Tailwind CSS", "Resend"],
     services: ["web-development"],
-    mockup: {
-      variant: "editorial",
-      accent: "#b8862b",
-      tone: "light",
-      heading: "Welcome home",
-      sub: "Gatherings, teaching and community in Manchester",
-    },
     overview: [
       "Bible Living Manchester needed a welcoming, easy-to-navigate website for a community in Manchester: information about gatherings, teaching and how to get in touch.",
       "The site was designed and developed end to end by Stephen, from first implementation to production deployment.",

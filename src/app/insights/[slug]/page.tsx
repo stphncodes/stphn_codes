@@ -20,6 +20,13 @@ import { formatDate } from "@/lib/utils";
 /** Only slugs from generateStaticParams exist; anything else is a 404 from static output. */
 export const ensureStatic = "navigation";
 
+/**
+ * The page body awaits `params`, so the App Shell cannot include its content and a client
+ * navigation waits for the (fully static, prerendered) route payload instead of showing a
+ * skeleton. Opt out of instant-navigation validation rather than add a Suspense fallback.
+ */
+export const instant = false;
+
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));
 }
